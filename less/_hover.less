@@ -1,0 +1,118 @@
+@media screen and (min-width: 1169px) {
+    
+    /* General */
+    
+    .slider-button {
+        &:hover {
+            &::before {
+                transform: rotate(45deg) translate(0px, -65px);
+            }
+        }
+    }
+    
+    .main-button {
+        &:hover {
+            &::before {
+                transform: rotate(45deg) translate(0px, -90px);
+            }
+        }
+    }
+    
+    .main-button-color {
+        &:hover {
+            &::before {
+                transform: rotate(45deg) translate(0px, -80px);
+            }
+        }
+    }
+    
+    /* Header */
+    
+    .header__link,
+    .header__item__drop .wrapper,
+    .header__drop-link,
+    .header__nav-profile__item,
+    .header__search__button {
+        &:hover {
+            color: #ACDA53;
+        }
+    }
+    
+    /* Header */
+    
+    /* Main banner */
+    
+    .main-banner__nav__button {
+        &:hover {
+            color: #E0E0E0;
+        }
+    }
+    
+    .main-banner__arrows {
+        .slider-button {
+            &:hover {
+                &::before {
+                    transform: rotate(45deg) translate(0px, -38px);
+                }
+            }
+        }
+    }
+    /* //Main banner */
+    
+    /* Product */
+    
+    .product__item__container {
+        &:hover {
+            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.3);
+            
+            .product__item__weight {
+                height: 40px;
+            }
+            
+            .product__item__weight-list {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0px);
+                transition: transform .4s, opacity .4s, visibility 0s 0s;
+            }
+        }
+    }
+    
+    .product__item__button {
+        &:hover {
+            color: #ffffff;
+        }
+    }
+    
+    .product__item__weight-item {
+        &:hover {
+            color: #ACDA53;
+        }
+    }
+    
+    .product__item__link {
+        &:hover {
+            color: #ACDA53;
+        }
+    }
+    
+    .product__item__img {
+        &:hover {
+            + .product__item__link {
+                color: #ACDA53;
+            }
+        }
+    }
+    
+    .product__item__footer {
+        .main-button-color {
+            &:hover {
+                &::before {
+                    transform: rotate(45deg) translate(0px, -65px);
+                }
+            }
+        }
+    }
+    
+    /* //Product */
+}
