@@ -26,6 +26,15 @@
         }
     }
     
+    .general-more {
+        &:hover {
+            .icon-arrow-right {
+                &::after {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
     /* Header */
     
     .header__link,
@@ -115,4 +124,12 @@
     }
     
     /* //Product */
+    
+    /* Choose kratom */
+    
+    .choose-kratom__filter__button {
+        &:hover {
+            color: #ACDA53;
+        }
+    }
 }

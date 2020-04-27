@@ -190,7 +190,7 @@
     position: relative;
     height: 445px;
     margin-bottom: 0px;
-    z-index: 2;
+    z-index: 3;
 }
 
 .product-slider__item {
@@ -553,4 +553,340 @@
     .info {
         margin-top: 10px;
     }
+}
+
+/* //About us block */
+
+/* Choose kratom */
+
+.choose-kratom {
+    margin-top: 100px;
+}
+
+.choose-kratom__wrapper {
+    display: flex;
+}
+
+.choose-kratom__info {
+    max-width: 410px;
+    width: 100%;
+    margin-right: 30px;
+    margin-top: 50px;
+    
+    .main-caption {
+        text-align: left;
+    }
+    
+    p {
+        color: #E0E0E0;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 700;
+        margin-top: 50px;
+    }
+}
+
+.choose-kratom__container {
+    max-width: 850px;
+    width: 100%;
+    display: flex;
+    background-color: #333333;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    padding: 50px;
+}
+
+.choose-kratom__filter__item {
+    margin-bottom: 20px;
+}
+
+.choose-kratom__filter__select {
+    display: flex;
+    align-items: center;
+    
+}
+
+.choose-kratom__filter {
+    .main-button-color {
+        margin-top: 30px;
+        max-width: 160px;
+        height: 48px;
+    }
+}
+
+.choose-kratom__point,
+.choose-kratom__filter__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #4F4F4F;
+    flex-shrink: 0;
+}
+
+.choose-kratom__point {
+    margin-right: 20px;
+    position: relative;
+    
+    .point-decor__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+        border: 1px solid #ACDA53;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity .4s;
+    }
+    
+    .point-decor__inner {
+        display: flex;
+        width: 11px;
+        height: 11px;
+        flex-shrink: 0;
+        
+        &::before,
+        &::after {
+            content: "";
+            height: 11px;
+            width: 6px;
+            background-color: #ACDA53;
+        }
+        
+        &::before {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        
+        &::after {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            transition: opacity .4s;
+        }
+    }
+    
+    &.active-half {
+        &:not(.active) {
+            .point-decor__wrapper {
+                opacity: 1;
+            }
+            .point-decor__inner {
+                &::after {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    
+    &.active {
+        &.active-half {
+            .point-decor__inner  {
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+        
+        .point-decor__wrapper {
+            opacity: 1;
+        }
+    }
+}
+
+.choose-kratom__filter__button {
+    color: #E0E0E0;
+    transition: color .4s;
+    
+    &:first-child {
+        margin-right: 20px;
+    }
+    
+    .icon-minus {
+        font-size: 2px;
+    }
+    
+    .icon-plus {
+        font-size: 8px;
+        margin-left: 1px;
+    }
+}
+
+.choose-kratom__filter__item {
+    .caption {
+        font-size: 14px;
+        line-height: 150%;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+}
+
+.choose-kratom__table__wrapper {
+    margin-left: auto;
+}
+
+.choose-kratom__table {
+    width: 328px;
+    height: 205px;
+    border-left: 1px solid #4F4F4F;
+    border-bottom: 1px solid #4F4F4F;
+    position: relative;
+    margin-top: 41px;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        left: -1px;
+        top: -41px;
+        height: 41px;
+        width: 1px;
+        background-color: #4F4F4F;
+    }
+}
+
+.choose-kratom__table__point {
+    position: absolute;
+    left: 47px;
+    bottom: 0px;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(169.01deg, #ACDA53 0%, rgba(172, 218, 83, 0) 100%);
+    
+    .point {
+        width: calc(100% - 2px);
+        height: calc(100% - 1px);
+        position: relative;
+        left: 1px;
+        top: 1px;
+        background: linear-gradient(169.01deg, #3D4234 0%, #333333 100%);
+    }
+    
+    &.relaxation {
+        left: 149px;
+    }
+    
+    &.euphoria {
+        left: auto;
+        right: 36px;
+    }
+}
+
+.choose-kratom__table__grid {
+    width: 100%;
+    height: 41px;
+    border-top: 1px solid rgba(79, 79, 79, 0.5);
+    border-bottom: 1px solid rgba(79, 79, 79, 0.5);
+}
+
+.choose-kratom__table__list {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #828282;
+    padding: 8px 25px 0px 30px;
+}
+
+.choose-kratom__table__item {
+    &:nth-child(2) {
+        margin: 0px 40px 0px 30px;
+    }
+}
+
+/* //Choose kratom */
+
+/* Advantages */
+
+.our-advantages {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+    .general-decor-text {
+        left: auto;
+        right: 75px;
+        top: -35px;
+        transform: none;
+    }
+}
+
+.our-advantages__wrapper {
+    position: relative;
+}
+
+.our-advantages__list {
+    display: flex;
+    margin-right: -80px;
+    margin-top: 30px;
+}
+
+.our-advantages__item {
+    width: calc(25% - 80px);
+    margin-right: 80px;
+}
+
+.our-advantages__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 10px;
+    transform: rotate(-45deg);
+    border: 1px solid #4F4F4F;
+    
+    div {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: rotate(45deg);
+    }
+}
+
+.our-advantages__img-consultation {
+    width: 27px;
+    height: 26px;
+}
+
+.our-advantages__img-delivery {
+    width: 24px;
+    height: 18px;
+}
+
+.our-advantages__img-money {
+    width: 21px;
+    height: 18px;
+}
+
+.our-advantages__img-quality {
+    width: 21px;
+    height: 19px;
+}
+
+.our-advantages__caption {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 15px;
+    margin-bottom: 9px;
+}
+
+.our-advantages__text {
+    font-size: 16px;
+    line-height: 20px;
+    color: #BDBDBD;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    height: 100px;
+    margin-bottom: 20px;
 }
