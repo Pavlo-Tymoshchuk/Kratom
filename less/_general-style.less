@@ -240,6 +240,7 @@ main {
     color: #E0E0E0;
     overflow: hidden;
     position: relative;
+    transition: opacity .2s;
     
     &.disabled {
         opacity: 0.6;
@@ -264,8 +265,19 @@ main {
         transform: rotate(45deg);
         transition: transform .4s;
     }
+    
+    &.slider-button-small {
+        width: 30px;
+        height: 30px;
+        
+        span {
+            font-size: 4px;
+        }
+    }
 }
 
+
+    
 .main-caption {
     font-family: @font-family;
     font-weight: 400;
@@ -293,7 +305,7 @@ main {
 .general-slider__buttons {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
     
     .main-button {
         margin: 0px 30px;
@@ -312,6 +324,7 @@ main {
     text-transform: uppercase;
     padding-bottom: 10px;
     border-bottom: 1px solid #FFFFFF;
+    margin-left: auto;
     
     .text {
         margin-right: 11px;
@@ -336,3 +349,6 @@ main {
         }
     }
 }
+
+
+/* //General */

@@ -1,5 +1,24 @@
 document.addEventListener("DOMContentLoaded", function(){
-        // Drop
+    
+    // Header
+    
+    let burger = document.querySelector('.header__burger');
+    let burgerList = document.querySelector(".header__nav");
+    let burgerClose = document.querySelector('.header__close-nav');
+
+    burger.addEventListener('click', function(){
+        burgerList.classList.add("active");
+        document.querySelector('html').classList.add('overflow');
+    });
+
+    burgerClose.addEventListener('click', function(){
+        burgerList.classList.remove('active');
+        document.querySelector('html').classList.remove('overflow');
+    });
+
+    // /Header
+    
+    // Drop
     
     var dropList = document.querySelectorAll('.js-drop-item');
 
@@ -57,7 +76,8 @@ document.addEventListener("DOMContentLoaded", function(){
             
             arrowNext.addEventListener('click', function() {
                 let itemShow = slider.querySelector('.js-slider-item.show');
-                let dotActive = slider.querySelector('.main-banner__nav__button.active');
+                let itemElseShow = slider.querySelector('.js-slider-item-else.show');
+                let dotActive = slider.querySelector('.js-dot.active');
                 
                 if(slider.querySelector('.js-slider-item.show').nextElementSibling == null) {
                     return;
@@ -70,6 +90,11 @@ document.addEventListener("DOMContentLoaded", function(){
                 
                 arrowPrev.classList.remove('disabled');
                 
+                if(itemElseShow) {
+                    itemElseShow.nextElementSibling.classList.add('show');
+                    itemElseShow.classList.remove('show');
+                }
+                
                 itemShow.nextElementSibling.classList.add('show');
                 itemShow.classList.remove('show');
                 
@@ -80,7 +105,8 @@ document.addEventListener("DOMContentLoaded", function(){
             
             arrowPrev.addEventListener('click', function() {
                 let itemShow = slider.querySelector('.js-slider-item.show');
-                let dotActive = slider.querySelector('.main-banner__nav__button.active');
+                let itemElseShow = slider.querySelector('.js-slider-item-else.show');
+                let dotActive = slider.querySelector('.js-dot.active');
                 
                 if(slider.querySelector('.js-slider-item.show').previousElementSibling == null) {
                     return;
@@ -90,7 +116,13 @@ document.addEventListener("DOMContentLoaded", function(){
                     dotActive.previousElementSibling.classList.add('active');
                     dotActive.classList.remove('active');
                 }
+                
                 arrowNext.classList.remove('disabled');
+                
+                if(itemElseShow) {
+                    itemElseShow.previousElementSibling.classList.add('show');
+                    itemElseShow.classList.remove('show');
+                }
                 
                 itemShow.previousElementSibling.classList.add('show');
                 itemShow.classList.remove('show');
@@ -241,4 +273,101 @@ document.addEventListener("DOMContentLoaded", function(){
     initialInfinitySlider();
     
     // //Infinty slider
+    
+    // More info
+        
+      function showMoreInfo() {
+            
+        let info = document.querySelectorAll('.js-item .js-content p');
+        let content = document.querySelectorAll('.js-item .js-content');
+        let moreButton = document.querySelectorAll('.js-item .js-more');
+        
+        if(info) {
+            for(var i = 0; info.length > i; i++) {
+                if(info[i].offsetHeight > content[i].offsetHeight) {
+                    moreButton[i].classList.add('show');
+                }else {
+                    moreButton[i].classList.remove('show');
+                }
+            }
+        }
+    }
+        
+    showMoreInfo();
+    
+    window.addEventListener('resize', function(){
+        showMoreInfo();
+    });
+    
+
+    
+    document.addEventListener('click', function(e){
+        let elem = e.target;
+        
+        if(elem.closest(".js-more")) {
+            let wrapper = elem.closest(".js-more").closest('.js-item');
+            let firstElem = wrapper.querySelector(".clients-say__info__text").cloneNode(true);
+            let secondElem = wrapper.querySelector(".clients-say__item__footer").cloneNode(true);
+            document.querySelector('.popup-reviews__wrapper').append(firstElem);
+            document.querySelector('.popup-reviews__wrapper').append(secondElem);
+        }
+    });
+    
+    // /More info
+    
+    // Popup
+        
+    let mainButton = document.querySelectorAll('.js-button');
+    let overlay = document.querySelector('.overlay');
+    let htmlOverflow = document.querySelector('html');
+    
+    for(var i = 0; mainButton.length > i; i++) {
+        if(mainButton[i] !== null) {
+            
+            mainButton[i].addEventListener('click', function(){
+                let getData = this.getAttribute('data-target');
+                let popup = document.querySelector('.popup[data-target = ' + getData + ']');
+                popup.classList.add('active');
+                overlay.classList.add('active');
+                htmlOverflow.classList.add('overflow')
+            });
+        }
+    }
+    
+    document.addEventListener('click', function(e){
+        let elem = e.target;
+        
+        if(elem.closest('.js-close')){
+            let popupActive = document.querySelector('.popup.active');
+            let popupReviews = document.querySelector(".popup-reviews.active");
+            
+            if(popupReviews) {
+                popupReviews.querySelector('.clients-say__info__text').remove();
+                popupReviews.querySelector('.clients-say__item__footer').remove();
+            }
+            
+            if(popupActive) {
+                
+                popupActive.classList.remove('active');
+                overlay.classList.remove('active');
+                htmlOverflow.classList.remove('overflow');
+            }
+        }
+    });
+
+    overlay.addEventListener('click', function(){
+        let popupActive = document.querySelector('.popup.active');
+        let popupReviews = document.querySelector(".popup-reviews.active");
+        
+        if(popupReviews) {
+            popupReviews.querySelector('.clients-say__info__text').remove();
+            popupReviews.querySelector('.clients-say__item__footer').remove();
+        }
+        
+        popupActive.classList.remove('active');
+        overlay.classList.remove('active');
+        htmlOverflow.classList.remove('overflow');
+    });
+    
+    // //Popup
 });
