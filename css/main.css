@@ -974,6 +974,8 @@ main {
   margin-right: -30px;
   margin-top: 30px;
   margin-bottom: -30px;
+  position: relative;
+  z-index: 3;
 }
 .product__item {
   width: 300px;
@@ -985,7 +987,6 @@ main {
 .product-slider__list {
   position: relative;
   height: 445px;
-  z-index: 3;
   margin-bottom: 0px;
 }
 .product-slider__item {
