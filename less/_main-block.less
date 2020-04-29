@@ -229,10 +229,11 @@
     position: absolute;
     left: 0px;
     top: 0px;
+    z-index: 1;
     padding: 30px 30px 25px;
     background: linear-gradient(158.36deg, #333333 48.05%, #3D3D3D 91.84%);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: height .4s, box-shadow .4s;
+    transition: height .4s, box-shadow .4s, z-index 0s .4s;
     
     &.active {
         .product__item__info-block {

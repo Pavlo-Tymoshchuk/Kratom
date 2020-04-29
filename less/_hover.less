@@ -95,7 +95,9 @@
     
     .product__item__container {
         &:hover {
+            z-index: 2;
             box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.3);
+            transition: height .4s, box-shadow .4s, z-index 0s 0s;
             
             .product__item__weight {
                 height: 40px;

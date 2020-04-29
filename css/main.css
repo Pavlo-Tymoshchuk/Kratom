@@ -564,7 +564,9 @@ main {
   /* //Main banner */
   /* Product */
   .product__item__container:hover {
+    z-index: 2;
     box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.3);
+    transition: height 0.4s, box-shadow 0.4s, z-index 0s 0s;
   }
   .product__item__container:hover .product__item__weight {
     height: 40px;
@@ -1019,10 +1021,11 @@ main {
   position: absolute;
   left: 0px;
   top: 0px;
+  z-index: 1;
   padding: 30px 30px 25px;
   background: linear-gradient(158.36deg, #333333 48.05%, #3D3D3D 91.84%);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: height 0.4s, box-shadow 0.4s;
+  transition: height 0.4s, box-shadow 0.4s, z-index 0s 0.4s;
 }
 .product__item__container.active .product__item__info-block {
   visibility: visible;
