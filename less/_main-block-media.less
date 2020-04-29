@@ -1,3 +1,14 @@
+@media screen and (max-width: 1330px) {
+    .product__position {
+        display: flex;
+        justify-content: center;
+        
+        .product__list {
+            max-width: 990px;
+        }
+    }
+}
+
 @media screen and (max-width: 1200px) {
     /* Main banner */
     
@@ -47,6 +58,10 @@
     
     .product {
         margin-bottom: 80px;
+    }
+    
+    .product__item {
+        height: 462px;
     }
     
     .product-slider__list {
@@ -211,11 +226,13 @@
         justify-content: center;
         margin-top: 50px;
         margin-right: -20px;
+        margin-bottom: -30px;
     }
     
     .article__item {
         width: 229px;
         margin-right: 20px;
+        margin-bottom: 30px;
     }
     
     .article__item__img {
@@ -266,12 +283,16 @@
     /* Seo block */
     
     .seo-block {
-        margin-top: 105px;
+        margin-top: 80px;
         
         &::before {
             height: 227px;
             bottom: -50px;
         }
+    }
+    
+    .seo-block-main {
+        margin-top: 105px;
     }
     
     /* //Seo block */
@@ -302,8 +323,22 @@
     
     /* Product */
     
+    .product__position {
+        display: flex;
+        justify-content: center;
+        
+        .product__list {
+            max-width: 747px;
+        }
+    }
+    
+    .product__list {
+        margin-right: -20px;
+    }
+    
     .product-slider__list {
         height: 415px;
+        margin-right: 0px;
     }
     
     .product-slider__item {
@@ -336,8 +371,9 @@
     }
     
     .product__item {
-        width: 230px;
+        width: 229px;
         height: 415px;
+        margin-right: 20px;
     }
     
     .product__item__container {
@@ -438,6 +474,10 @@
         
         .icon-minus {
             font-size: 3px;
+        }
+        
+        &:last-of-type {
+            margin-left: 10px;
         }
     }
     
@@ -555,6 +595,7 @@
         &::before {
             width: 64px;
             height: 8px;
+            top: 8px;
         }
     }
     
@@ -597,11 +638,6 @@
     .dots__item {
         width: 6px;
         height: 6px;
-        transition: transform .4s, background-color .4s;
-        
-        &.active {
-            transform: scale(1.15);
-        }
     }
     
     /* //Follow us */
@@ -616,5 +652,605 @@
         margin-right: 20px;
     }
     
+    .question-block__link {
+        width: 48px;
+        height: 48px;
+    }
+    
     /* //Question block */
+    
+    /* Shop page */
+
+    .shop-page__wrapper {
+        .general-decor-figure {
+            width: 245px;
+            height: 245px;
+            right: -50px;
+            top: 100px;
+        }
+        
+        .general-tabs__list {
+            margin-top: 50px;
+        }
+    }
+
+    /* //Shop page */
+}
+
+
+@media screen and (max-width: 767px) {
+    /* Main banner */
+    
+    .main-banner {
+        margin-bottom: 10px;
+    }
+    
+    .main-banner__info {
+        h4 {
+            font-size: 16px;
+        }
+        
+        h2 {
+            font-size: 48px;
+            line-height: 110%;
+        }
+    }
+    
+    .main-banner__img {
+        height: 156px;
+    }
+    
+    /* //Main banner */
+    
+    /* Product */
+    
+    .product__position {
+        display: flex;
+        justify-content: center;
+        
+        .product__list {
+            max-width: 498px;
+        }
+    }
+    
+    .product {
+        margin-bottom: 50px;
+    }
+    
+    /* //Product */
+    
+    /* About us */
+    
+    .about-us-block__wrapper {
+        .general-decor-text {
+            display: none;
+        }
+        
+        .general-decor-figure {
+            display: block;
+            width: 190px;
+            height: 190px;
+            left: -40px;
+            top: -100px;
+            transform: rotate(55deg);
+        }
+    }
+    
+    .about-us-block__container {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    
+    .about-us-block__img {
+        width: 100%;
+        height: 165px;
+    }
+    
+    .about-us-block__text {
+        width: 100%;
+        margin-top: 20px;
+        
+        .general-decor-elem {
+            margin-bottom: 20px;
+        }
+        
+        .wrapper {
+            height: initial;
+        }
+        
+        .main-button {
+            max-width: 320px;
+            margin: 20px auto 0px;
+        }
+    }
+    
+    .about-us-block__description__list {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: -30px;
+    }
+    
+    .about-us-block__description__item {
+        margin-bottom: 30px;
+        max-width: 320px;
+        width: 100%;
+    }
+    
+    /* //About us */
+    
+    /* Choose kratom */
+    
+    .choose-kratom {
+        margin-top: 50px;
+    }
+    
+    .choose-kratom__info  {
+        p {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    }
+    
+    .choose-kratom__container {
+        justify-content: center;
+        padding: 0px;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    
+    .choose-kratom__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .choose-kratom__filter {
+        max-width: 280px;
+        width: 100%;
+        
+        .main-button-color {
+            position: static;
+            transform: none;
+            max-width: 320px;
+        }
+    }
+    
+    .choose-kratom__filter__item {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    
+    .choose-kratom__table__wrapper {
+        display: none;
+    }
+    
+    /* //Choose kratom */
+    
+    /* Advantages */
+    
+    .our-advantages {
+        margin-top: 50px;
+        
+        .general-decor-text {
+            display: none;
+        }
+    }
+    
+    .our-advantages__list {
+        margin-top: 27px;
+    }
+    
+    /* //Advantages */
+    
+    /* Article */
+    
+    .article__list {
+        margin-top: 20px;
+    }
+    
+    .article__list-main-page {
+        .article__item {
+            &:nth-child(3) {
+                display: none;
+            }
+         }
+    }
+    
+    /* /Article */
+    
+    /* Clients say */
+    
+    .clients-say {
+        margin-top: 50px;
+    }
+    
+    .clients-say__img {
+        top: 45px;
+    }
+    
+    .clients-say__header {
+        margin-top: 50px;
+    }
+    
+    /* /Clients say */
+    
+    /* Follow us */
+    
+    .follow-us {
+        margin-top: 100px;
+    }
+    
+    .follow-us__wrapper {
+        .general-decor-text {
+            display: none;
+        }
+    }
+    
+    .follow-us__tablet {
+        width: 300px;
+        height: 240px;
+    }
+    
+    /* //Follow us */
+    
+    /* Seo block */
+    
+    .seo-block {
+        margin-top: 50px;
+        
+        &::before {
+            height: 141px;
+            bottom: -50px;
+        }
+    }
+    
+    .seo-block__container {
+        max-height: 775px;
+    }
+    
+    /* //Seo block */
+    
+    /* Questio block */
+    
+    .question-block {
+        margin-top: 50px;
+    }
+    
+    /* //Questio block */
+}
+
+
+@media screen and (max-width: 576px) {
+    /* Main banner */
+    
+    .main-banner {
+        margin-top: -20px;
+        
+        .general-decor-figure {
+            width: 152px;
+            height: 152px;
+            top: 100px;
+            right: -25px;
+            z-index: 1;
+        }
+        
+        .general-decor-text {
+            top: 128px;
+            left: 25px;
+            max-width: 140px;
+        }
+    }
+    
+    .general-decor-text__list {
+        font-size: 8px;
+        line-height: 10px;
+        top: 185px;
+        right: 20px;
+    }
+    
+    .main-banner__list {
+        height: 400px;
+    }
+    
+    .main-banner__info {
+        max-width: 100%;
+        padding-top: 62px;
+        
+        h2 {
+            max-width: 320px;
+        }
+        
+        .main-button-color {
+            max-width: 182px;
+            margin: 0px auto;
+        }
+    }
+    
+    .main-banner__nav {
+        font-size: 12px;
+    }
+    
+    .main-banner__nav__button {
+        margin-right: 10px;
+    }
+    
+    /* /Main banner */
+    
+    /* Product */
+    
+    .product__position {
+        display: flex;
+        justify-content: center;
+        
+        .product__list {
+            margin-right: 0px;
+            max-width: 320px;
+            width: 100%;
+        }
+    }
+    
+    .product__wrapper {
+        .dots__list {
+            display: none;
+        }
+    }
+    
+    .product-slider__list {
+        margin-top: 20px;
+        height: initial;
+        
+        &.product__list {
+            justify-content: center;
+        }
+    }
+    
+    .product__list {
+        margin-bottom: -20px;
+    }
+    
+    .product__item {
+        width: 320px;
+        height: 451px;
+        margin-bottom: 20px;
+        margin-right: 0px;
+    }
+    
+    .product-slider__item {
+        &:nth-child(n + 4) {
+            display: none;
+        }
+    }
+    
+    .product__item__info-block {
+        .wrapper {
+            height: 335px;
+        }
+    }
+    
+    .product__item__img {
+        height: 160px;
+    }
+    
+    .product__item__link {
+        justify-content: center;
+    }
+    
+    .product__item__weight-list {
+        justify-content: center;
+    }
+    
+    .product__item__weight-item {
+        margin-right: 10px;
+    }
+    
+    .product-slider__item {
+        position: relative;
+        transform: none !important;
+        opacity: 1 !important;
+        transition: none;
+    }
+    
+    /* //Product */
+    
+    /* Advantages */
+    
+    .our-advantages__list {
+        flex-wrap: wrap;
+        margin-right: 0px;
+        margin-bottom: -27px;
+    }
+    
+    .our-advantages__item {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 27px;
+    }
+    
+    .our-advantages__text {
+        height: initial;
+        max-height: 100px;
+        -webkit-line-clamp: 5;
+    }
+    
+    /* //Advantages */
+    
+    /* Article */
+    
+    .article {
+        .main-button {
+            max-width: 320px;
+            margin: 20px auto 0px;
+        }
+    }
+    
+    .article__list-main-page {
+        .article__item {
+            &:nth-child(3) {
+                display: block;
+            }
+         }
+    }
+    
+    .article__item {
+        width: 320px;
+    }
+    
+    .article__item__img {
+        height: 188px;
+        margin-bottom: 20px;
+    }
+    
+    .article__item__text {
+        margin: 10px 0px 10px;
+    }
+    
+    /* //Article */
+    
+    /* Clients say */
+    
+    .clients-say__wrapper {
+        .main-button {
+            max-width: 320px;
+        }
+    }
+    
+    .clients-say__img {
+        height: 246px;
+    }
+    
+    .clients-say__buttons {
+        flex-direction: column;
+        align-items: center;
+        
+        .main-button-color {
+            max-width: 320px;
+        }
+    }
+    
+    .clients-say__button {
+        margin: 10px 0px 0px;
+    }
+    
+    .clients-say__list {
+        margin-top: 20px;
+    }
+    
+    .clients-say__item {
+        width: 280px;
+    }
+    
+    .clients-say__info {
+        height: 199px;
+        margin-bottom: 10px;
+    }
+    
+    .clients-say__info__text {
+        line-height: 150%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        max-height: 84px;
+        -webkit-line-clamp: 4;
+    }
+    
+    /* //Clients say */
+    
+    /* Follow us */
+    
+    .follow-us {
+        margin-top: 50px;
+    }
+    
+    .follow-us__wrapper {
+        .main-caption {
+            top: 0px;
+            left: 20px;
+        }
+        
+        .general-decor-figure {
+            width: 189px;
+            height: 189px;
+            left: -60px;
+            top: -60px;
+        }
+    }
+    
+    .follow-us__container {
+        margin-left: 0px;
+    }
+    
+    .follow-us__phone {
+        height: 245px;
+        margin: 0px;
+        right: 0px;
+        bottom: 0px;
+    }
+    
+    .follow-us__tablet {
+        display: none;
+    }
+    
+    .follow-us__social-wrapper {
+        order: -1;
+        margin: 0px 45px 0px 0px;
+    }
+    
+    .follow-us__social-list {
+        width: 100%;
+        align-items: flex-start;
+        margin-top: 30px;
+    }
+    
+    .follow-us__social-item {
+        margin-left: 0px;
+    }
+    
+    .follow-us__arrows {
+        display: none;
+    }
+    
+    /* //Follow us */
+    
+    /* Questio block */
+    
+    .question-block__container {
+        padding: 30px 0px;
+        
+        .sub {
+            margin-top: 10px;
+        }
+    }
+    
+    .question-block__list {
+        margin-top: 30px;
+    }
+    
+    .question-block__item {
+        margin-right: 10px;
+    }
+    
+    /* //Questio block */
+    
+     /* Shop page */
+
+    .shop-page__wrapper {
+        .general-decor-figure {
+            display: none;
+        }
+        
+        .general-tabs__list {
+            margin-top: 30px;
+        }
+    }
+
+    /* //Shop page */
+}
+
+@media screen and (max-width: 380px) {
+    /* Choose kratom */
+    
+    .choose-kratom__info {
+        align-items: flex-start;
+    }
+    
+    /* /Choose kratom */
 }

@@ -43,6 +43,30 @@
             }
         }
     }
+    
+    .button-to-top {
+        .to-top {
+            &:hover {
+                color: #ACDA53;
+            }
+        }
+    }
+    
+    .general-tabs__item {
+        &:hover {
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+    
+    .breadcrumbs__item {
+        &:hover {
+            color: #ACDA53;
+        }
+    }
+    
+    /* //General */
     /* Header */
     
     .header__link,
@@ -188,6 +212,38 @@
     
     /* //Question block */
     
+    
+    /* Product page */
+    
+    .product-page__img-arrows {
+        .slider-button {
+            &:hover {
+                &::before {
+                    transform: rotate(45deg) translate(0px, -45px);
+                }
+            }
+        }
+    }
+    
+    .calc_button {
+        &:hover {
+            &::before {
+                transform: rotate(45deg) translate(0px, -50px);
+            }
+        }
+    }
+    
+    .product-page__price-wrapper {
+        .main-button-color {
+            &:hover {
+                &::before {
+                    transform: rotate(45deg) translate(0px, -120px);
+                }
+            }
+        }
+    }
+    
+    
     /* Footer */
     
     .footer__item,
@@ -202,4 +258,6 @@
             background-color: #6F6F6F;
         }
     }
+    
+    /* //Footer */
 }
