@@ -167,6 +167,29 @@
     }
 }
 
+.product__wrapper {
+    position: relative;
+    
+    .general-decor-figure {
+        width: 320px;
+        height: 320px;
+        right: 0px;
+        top: 200px;
+        transform: rotate(-154deg);
+    }
+}
+
+.product__wrapper_header {
+    position: relative;
+    
+    .general-more {
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
 
 .product__list {
     display: flex;
@@ -236,6 +259,9 @@
     transition: height .4s, box-shadow .4s, z-index 0s .4s;
     
     &.active {
+        z-index: 2;
+        transition: height .4s, box-shadow .4s, z-index 0s 0s;
+        
         .product__item__info-block {
             visibility: visible;
             opacity: 1;
@@ -1434,6 +1460,10 @@
 
 /* Product page */
 
+.product-page__wrapper {
+    margin-bottom: 100px;
+}
+
 .product-page__header {
     display: flex;
     justify-content: space-between;
@@ -1508,6 +1538,7 @@
         transform: none;
         visibility: visible;
         opacity: 1;
+        font-size: 16px;
     }
     
     .product__item__weight-item {
@@ -1518,7 +1549,11 @@
 .product-page__info-choose {
     max-width: 323px;
     width: 100%;
-    margin-right: 50px;
+    margin-right: 45px;
+}
+
+.product-page__info-sale-mobile {
+    display: none;
 }
 
 .product-page__price-wrapper {
@@ -1643,7 +1678,7 @@
 
 .product-page__info-footer {
     display: flex;
-    flex-wrap: wrap;
+    position: relative;
     
     .choose-kratom__filter {
         max-width: 338px;
@@ -1696,6 +1731,9 @@
     .general-more {
         margin-top: 30px;
         margin-left: 0px;
+        position: absolute;
+        left: 0px;
+        bottom: -60px;
     }
 }
 
@@ -1779,6 +1817,14 @@
     width: 100%;
 }
 
+/* //Product Page */
+
+/* Reviews */
+
+.reviews {
+    margin-top: 50px;
+}
+
 .reviews__caprtion {
     display: flex;
     align-items: center;
@@ -1807,6 +1853,7 @@
 
 .add-reviews__item {
     display: flex;
+    align-items: flex-start;
     color: #E0E0E0;
     font-size: 14px;
     line-height: 17px;
@@ -1828,7 +1875,7 @@
         }
     }
     
-    .button-log-in {
+    .button-enter {
         margin-left: 10px;
     }
 }
@@ -1837,6 +1884,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -1846,8 +1894,196 @@
     margin-left: 10px;
 }
 
-.button-log-in {
+.add-reviews__form {
+    .wrapper {
+        display: flex;
+        align-items: center;
+    }
+    
+    .main-textarea {
+        height: 40px;
+    }
+}
+
+.add-reviews__buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.reviews-img {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.reviews__list {
+    margin-top: 20px;
+}
+
+.reviews__item {
+    display: flex;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 20px;
+    
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.reviews__item-info {
+    width: 100%;
+}
+
+.reviews__item-info__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
+    .name {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    
+    .date {
+        color: #BDBDBD;
+    }
+}
+
+.reviews__item-info__body {
+    color: #E0E0E0;
+}
+
+.reviews__item-info__footer {
+    margin-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #4F4F4F;
+    position: relative;
+    height: 34px;
+    max-height: 34px;
+    transition: max-height .1s;
+    
+    .add-reviews__form {
+        position: absolute;
+        width: 83%;
+        right: 0px;
+        top: 35px;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-50px);
+        transition: opacity .4s 0s, visibility 0s .4s, transform .4s 0s;
+    }
+    
+    &.active {
+        height: 147px;
+        max-height: 147px;
+        transition: max-height .1s;
+        
+        .add-reviews__form {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0px);
+            transition: opacity .4s .2s, visibility 0s .1s, transform .4s .2s;
+        }
+        
+        .reviews__interaction__button-reply {
+            color: #FFFFFF;
+            
+            .icon-comment {
+                &::before {
+                    content: "\e912";
+                }
+            }
+        }
+    }
+}
+
+.reviews__interaction {
+    display: flex;
+    align-items: flex-end;
+    height: 18px;
+}
+
+.reviews__interaction__button {
+    display: flex;
+    align-items: center;
     font-size: 12px;
+    font-weight: 700;
     line-height: 15px;
-    color: #ACDA53;
+    text-transform: uppercase;
+    color: #E0E0E0;
+    margin-right: 23px;
+    transition: color .4s;
+    
+    &:first-child {
+        align-self: flex-start;
+    }
+    
+    .text {
+        text-align: center;
+        width: 12px;
+        margin-left: 5px;
+    }
+    
+    .icon-like-up,
+    .icon-like-down,
+    .icon-comment {
+        font-size: 14px;
+    }
+    
+    &.active {
+        color: #FFFFFF;
+        
+        .icon-like-up {
+            font-size: 16px;
+            height: 14px;
+            
+            &::before {
+                content: "\e91b";
+            }
+        }
+        
+        .icon-like-down {
+            font-size: 16px;
+            height: 14px;
+            
+            &::before {
+                content: "\e91a";
+            }
+        }
+    }
+}
+
+.reviews__interaction__button-reply {
+    margin-left: 7px;
+    
+    .text {
+        margin-left: 10px;
+    }
+}
+
+.product-page__more-reviews {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 150%;
+    margin-left: 60px;
+    margin-top: 10px;
+    transition: color .4s;
+    
+    .text {
+        margin-right: 10px;
+    }
+    
+    .icon-drop {
+        font-size: 4px;
+        transform: rotate(180deg);
+    }
 }

@@ -18,6 +18,69 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // /Header
     
+    // Main input
+    
+    let allInput = document.querySelectorAll('.js-input');
+    
+    function checkInput(inputItems) {
+        inputItems.forEach(function(item){
+            let itemLenght = item.value.length;
+            let inputWrapper = item.closest('.js-input-wrapper')
+            if(itemLenght) {
+                inputWrapper.classList.add('active-input');
+            }else {
+                inputWrapper.classList.remove('active-input');
+            }
+            item.addEventListener("keyup", function(){
+                let itemLenght = item.value.length;
+                if(itemLenght) {
+                    inputWrapper.classList.add('active-input');
+                }else {
+                    inputWrapper.classList.remove('active-input');
+                }
+            });
+        });
+    }
+    
+    checkInput(allInput);
+    
+    // /Main input
+    
+    // Shop password 
+    
+    document.addEventListener("mousedown", function(e){
+        let item = e.target;
+        
+        if(item.closest(".show-password")) {
+            let wrapperInput = item.closest(".js-input-wrapper");
+            let activeInput = wrapperInput.querySelector(".js-input");
+            console.log(activeInput)
+            activeInput.setAttribute("type", "text");
+        }
+    });
+    
+    document.addEventListener("mouseup", function(e){
+        let item = e.target;
+        
+        if(item.closest(".show-password")) {
+            let wrapperInput = item.closest(".js-input-wrapper");
+            let activeInput = wrapperInput.querySelector(".js-input");
+            console.log(activeInput)
+            activeInput.setAttribute("type", "password");
+        }
+    });
+    
+    document.addEventListener("mouseout", function(e){
+        let item = e.target;
+        
+        if(item.closest(".show-password")) {
+            let wrapperInput = item.closest(".js-input-wrapper");
+            let activeInput = wrapperInput.querySelector(".js-input");
+            console.log(activeInput)
+            activeInput.setAttribute("type", "password");
+        }
+    });
+    
     // Drop
     
     var dropList = document.querySelectorAll('.js-drop-item');
@@ -35,6 +98,25 @@ document.addEventListener("DOMContentLoaded", function(){
                 element.closest('.js-drop-item').classList.remove('active');
             else
                 element.closest('.js-drop-item').classList.add('active');
+        }
+        
+        if(element.closest('.js-drop-contains')){
+            let dropList = element.closest('.js-drop-item');
+            let dropItems = dropList.querySelectorAll('.js-drop-contains');
+            
+            dropItems.forEach(item => {item.classList.remove('active')});
+            element.closest('.js-drop-contains').classList.add('active');
+            let innerContent = element.closest('.js-drop-contains').querySelector('.text').innerHTML;
+            let dropInput = dropList.querySelector('.js-drop-input');
+            
+            if(dropInput) {
+                dropInput.value = innerContent;
+            }
+            
+            checkInput(allInput);
+            
+            // close dropdown
+            dropList.classList.remove('active');
         }
     });
     
