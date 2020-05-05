@@ -48,38 +48,43 @@ document.addEventListener("DOMContentLoaded", function(){
     
     // Shop password 
     
-    document.addEventListener("mousedown", function(e){
+    document.addEventListener("click", function(e){
         let item = e.target;
         
         if(item.closest(".show-password")) {
             let wrapperInput = item.closest(".js-input-wrapper");
             let activeInput = wrapperInput.querySelector(".js-input");
-            console.log(activeInput)
-            activeInput.setAttribute("type", "text");
+            let getState = activeInput.getAttribute("type");
+            
+            if(getState == "password") {
+                activeInput.setAttribute("type", "text");
+            }else {
+                activeInput.setAttribute("type", "password");
+            }
         }
     });
     
-    document.addEventListener("mouseup", function(e){
-        let item = e.target;
+    // document.addEventListener("mouseup", function(e){
+    //     let item = e.target;
         
-        if(item.closest(".show-password")) {
-            let wrapperInput = item.closest(".js-input-wrapper");
-            let activeInput = wrapperInput.querySelector(".js-input");
-            console.log(activeInput)
-            activeInput.setAttribute("type", "password");
-        }
-    });
+    //     if(item.closest(".show-password")) {
+    //         let wrapperInput = item.closest(".js-input-wrapper");
+    //         let activeInput = wrapperInput.querySelector(".js-input");
+    //         console.log(activeInput)
+    //         activeInput.setAttribute("type", "password");
+    //     }
+    // });
     
-    document.addEventListener("mouseout", function(e){
-        let item = e.target;
+    // document.addEventListener("mouseout", function(e){
+    //     let item = e.target;
         
-        if(item.closest(".show-password")) {
-            let wrapperInput = item.closest(".js-input-wrapper");
-            let activeInput = wrapperInput.querySelector(".js-input");
-            console.log(activeInput)
-            activeInput.setAttribute("type", "password");
-        }
-    });
+    //     if(item.closest(".show-password")) {
+    //         let wrapperInput = item.closest(".js-input-wrapper");
+    //         let activeInput = wrapperInput.querySelector(".js-input");
+    //         console.log(activeInput)
+    //         activeInput.setAttribute("type", "password");
+    //     }
+    // });
     
     // Drop
     
@@ -506,4 +511,16 @@ document.addEventListener("DOMContentLoaded", function(){
     });
     
     // /Scroll to top
+    
+    /* Reviews */
+    
+    document.addEventListener('click', function(e){
+        let item = e.target;
+        
+        if(item.closest('.js-reviews-button')) {
+            let wrapper = item.closest('.js-drop-item');
+            
+            wrapper.classList.remove('active');
+        }
+    });
 });
