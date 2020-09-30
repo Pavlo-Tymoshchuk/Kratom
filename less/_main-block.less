@@ -2991,6 +2991,79 @@
     .general-more {
         margin-top: 30px;
     }
+    
+    .table__wrapper {
+        overflow: auto;
+    }
+    
+    table {
+        min-width: 630px;
+        width: 100%;
+        background: #333333;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 30px;
+        padding: 30px;
+        margin-bottom: 30px;
+        color: #E0E0E0;
+        font-size: 14px;
+        line-height: 150%;
+        border-collapse: collapse;
+    }
+    
+
+    
+    tbody {
+        tr {
+            &:last-child {
+                td {
+                    padding-bottom: 30px;
+                    border: none;
+                }
+            }
+        }
+    }
+    
+    tr {
+        td {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #4F4F4F;
+            
+            &:nth-child(1) {
+                width: 142px;
+                padding-left: 30px;
+                padding-right: 20psx;
+            }
+            
+            &:nth-child(2) {
+                width: 155px;
+                padding-right: 20px;
+            }
+            
+            &:nth-child(3) {
+                width: 273px;
+                padding-right: 30px;
+            }
+        }
+    }
+    
+    thead {
+        font-weight: 700;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        
+        
+        td {
+            padding-top: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        
+    }
+    
+    td {
+        padding: 0px 20px 0px 0px;
+    }
 }
 
 .articel-page__similar {
